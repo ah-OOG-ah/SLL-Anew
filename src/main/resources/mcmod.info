@@ -6,7 +6,7 @@
     "description": "An Open Source Mod Library of useful files",
     "version": "${modVersion}",
     "mcversion": "${minecraftVersion}",
-    "url": "https://github.com/ah-OOG-ah/SlimevoidLibrary",
+    "url": "https://github.com/ah-OOG-ah/SLL-Anew",
     "updateUrl": "",
     "authorList": ["ah-OOG-ah"],
     "credits": "ali4z, DV8FromTheWorld, allaryin, Slimevoid, Eurymachus",
