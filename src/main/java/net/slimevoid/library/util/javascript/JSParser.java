@@ -28,15 +28,13 @@ public class JSParser {
 
         try {
             for (String param : params.keySet()) {
-                se.put(param,
-                       params.get(param));
+                se.put(param, params.get(param));
             }
 
             se.eval(script);
             return se.eval(func);
         } catch (ScriptException e) {
-            SlimevoidCore.console(SlimevoidLib.MOD_ID,
-                                  e.getLocalizedMessage());
+            SlimevoidCore.console(SlimevoidLib.MOD_ID, e.getLocalizedMessage());
         }
         return null;
     }
