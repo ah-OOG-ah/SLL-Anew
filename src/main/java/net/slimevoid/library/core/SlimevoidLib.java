@@ -13,7 +13,6 @@ package net.slimevoid.library.core;
 
 import net.slimevoid.library.ICommonProxy;
 import net.slimevoid.library.core.lib.ConfigurationLib;
-import net.slimevoid.library.core.lib.CoreLib;
 import net.slimevoid.library.util.helpers.SlimevoidHelper;
 import net.slimevoid.library.util.json.JSONLoader;
 import net.slimevoid.library.util.xml.XMLVariables;
@@ -25,13 +24,16 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 @Mod(
-        modid = CoreLib.MOD_ID,
-        name = CoreLib.MOD_NAME,
-        version = CoreLib.MOD_VERSION)
+        modid = SlimevoidLib.MOD_ID,
+        name = "Slimevoid Library",
+        version = Tags.VERSION,
+        dependencies = "required-after:Forge@[10.13.4.1614,)")
 public class SlimevoidLib {
+    public static final String MOD_ID = "SlimevoidLib";
+
     @SidedProxy(
-            clientSide = CoreLib.MOD_CLIENT_PROXY,
-            serverSide = CoreLib.MOD_COMMON_PROXY)
+            clientSide = "net.slimevoid.library.proxy.SV_ClientProxy",
+            serverSide = "net.slimevoid.library.proxy.SV_CommonProxy")
     public static ICommonProxy proxy;
 
     @EventHandler

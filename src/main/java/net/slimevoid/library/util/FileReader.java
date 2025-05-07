@@ -21,7 +21,7 @@ import java.io.InputStreamReader;
 import java.nio.channels.FileChannel;
 
 import net.slimevoid.library.core.SlimevoidCore;
-import net.slimevoid.library.core.lib.CoreLib;
+import net.slimevoid.library.core.SlimevoidLib;
 
 public class FileReader {
 
@@ -63,7 +63,7 @@ public class FileReader {
 
     /**
      * Checks if a file exists in a directory.
-     * 
+     *
      * @param filename
      *            The filename.
      * @param dir
@@ -76,12 +76,12 @@ public class FileReader {
 
     /**
      * Copies a file to a directory.
-     * 
+     *
      * @param from
      *            Source file.
      * @param toDir
      *            Destination directory.
-     * 
+     *
      * @throws IOException
      */
     public static void copyDefaultTo(File from, File toDir) throws IOException {
@@ -115,23 +115,23 @@ public class FileReader {
 
     /**
      * Send a info message, logger or console.
-     * 
+     *
      * @param error
      *            The message.
      */
     public static void sendMessage(String message) {
-        SlimevoidCore.console(CoreLib.MOD_ID,
+        SlimevoidCore.console(SlimevoidLib.MOD_ID,
                               message);
     }
 
     /**
      * Send a error message, logger or console.
-     * 
+     *
      * @param error
      *            The message.
      */
     public static void endWithError(String error) {
-        SlimevoidCore.console(CoreLib.MOD_ID,
+        SlimevoidCore.console(SlimevoidLib.MOD_ID,
                               error);
     }
 }

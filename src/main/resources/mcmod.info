@@ -1,17 +1,21 @@
-[
 {
-  "modid": "SlimevoidLib",
-  "name": "Slimevoid Library",
-  "description": "An Open Source Mod Library of useful files",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
-  "url": "https://github.com/SlimeVoid/SlimevoidLibrary",
-  "updateUrl": "",
-  "credits": "ali4z, DV8FromTheWorld, allaryin, Slimevoid",
-  "authors": ["Eurymachus"],
-  "logoFile": "",
-  "screenshots": [],
-  "parent":"",
-  "dependencies": []
+  "modListVersion": 2,
+  "modList": [{
+    "modid": "${modId}",
+    "name": "${modName}",
+    "description": "An Open Source Mod Library of useful files",
+    "version": "${modVersion}",
+    "mcversion": "${minecraftVersion}",
+    "url": "https://github.com/ah-OOG-ah/SlimevoidLibrary",
+    "updateUrl": "",
+    "authorList": ["ah-OOG-ah"],
+    "credits": "ali4z, DV8FromTheWorld, allaryin, Slimevoid, Eurymachus",
+    "logoFile": "",
+    "screenshots": [],
+    "parent": "",
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "useDependencyInformation": false
+  }]
 }
-]

@@ -8,7 +8,7 @@ import java.net.URISyntaxException;
 import java.util.HashMap;
 
 import net.slimevoid.library.core.SlimevoidCore;
-import net.slimevoid.library.core.lib.CoreLib;
+import net.slimevoid.library.core.SlimevoidLib;
 import net.slimevoid.library.util.FileUtils;
 import argo.saj.InvalidSyntaxException;
 
@@ -82,7 +82,7 @@ public abstract class JSONLoader {
 
     /**
      * Loads default XML Recipe files from a directory.
-     * 
+     *
      * @param dir
      *            Default XML directory.
      */
@@ -100,7 +100,7 @@ public abstract class JSONLoader {
                         // Returns the file as an InputStream
                         InputStream instr = this._class.getClassLoader().getResourceAsStream(this.location
                                                                                              + this.filename);
-                        SlimevoidCore.console(CoreLib.MOD_ID,
+                        SlimevoidCore.console(SlimevoidLib.MOD_ID,
                                               "Resource loaded from ["
                                                       + this._class.getSimpleName()
                                                       + "][" + this.location
@@ -109,7 +109,7 @@ public abstract class JSONLoader {
                     }
                 }
             } else {
-                SlimevoidCore.console(CoreLib.MOD_ID,
+                SlimevoidCore.console(SlimevoidLib.MOD_ID,
                                       "Caution: Failed to get resource list from ["
                                               + this._class.getSimpleName()
                                               + "][" + location + filename

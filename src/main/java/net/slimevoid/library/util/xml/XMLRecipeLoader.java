@@ -27,7 +27,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.slimevoid.library.core.SlimevoidCore;
-import net.slimevoid.library.core.lib.CoreLib;
+import net.slimevoid.library.core.SlimevoidLib;
 import net.slimevoid.library.util.FileReader;
 import net.slimevoid.library.util.FileUtils;
 
@@ -48,7 +48,7 @@ public class XMLRecipeLoader extends XMLLoader {
 
     /**
      * Loads default XML Recipe files from a directory.
-     * 
+     *
      * @param dir
      *            Default XML directory.
      */
@@ -76,12 +76,12 @@ public class XMLRecipeLoader extends XMLLoader {
                     // Adds the InputStream HashMap to our resourceLocations Map
                     defaultLocations.put(location,
                                          defaultStreams);
-                    SlimevoidCore.console(CoreLib.MOD_ID,
+                    SlimevoidCore.console(SlimevoidLib.MOD_ID,
                                           "Resource list loaded from ["
                                                   + clazz.getSimpleName()
                                                   + "][" + location + "]");
                 } else {
-                    SlimevoidCore.console(CoreLib.MOD_ID,
+                    SlimevoidCore.console(SlimevoidLib.MOD_ID,
                                           "Caution: Failed to get resource list from ["
                                                   + clazz.getSimpleName()
                                                   + "][" + location + "]",
@@ -97,7 +97,7 @@ public class XMLRecipeLoader extends XMLLoader {
 
     /**
      * Loads XML Recipe files from a directory.
-     * 
+     *
      * @param dir
      *            Source directory.
      */
@@ -117,16 +117,16 @@ public class XMLRecipeLoader extends XMLLoader {
                                             + filename);
                     if (FileUtils.copyStream(defaultStreams.get(filename),
                                              newFile)) {
-                        SlimevoidCore.console(CoreLib.MOD_ID,
+                        SlimevoidCore.console(SlimevoidLib.MOD_ID,
                                               "Default was file loaded ["
                                                       + newFile.getName() + "]");
                     } else {
-                        SlimevoidCore.console(CoreLib.MOD_ID,
+                        SlimevoidCore.console(SlimevoidLib.MOD_ID,
                                               "Failed to load default file ["
                                                       + newFile.getName() + "]");
                     }
                 } else {
-                    SlimevoidCore.console(CoreLib.MOD_ID,
+                    SlimevoidCore.console(SlimevoidLib.MOD_ID,
                                           "File ["
                                                   + filename
                                                   + "] already exists! Skipping...");
@@ -140,7 +140,7 @@ public class XMLRecipeLoader extends XMLLoader {
             }
             defaultLocations.remove(locationKey);
         } else {
-            SlimevoidCore.console(CoreLib.MOD_ID,
+            SlimevoidCore.console(SlimevoidLib.MOD_ID,
                                   "Caution: Could not load default settings from ["
                                           + locationKey + "]");
         }
@@ -148,7 +148,7 @@ public class XMLRecipeLoader extends XMLLoader {
 
     /**
      * Load a specific XML Recipe file.
-     * 
+     *
      * @param file
      *            Source file.
      */
@@ -195,7 +195,7 @@ public class XMLRecipeLoader extends XMLLoader {
 
     /**
      * Assemble a recipe Element node.
-     * 
+     *
      * @param element
      *            Element node.
      * @param xmlFile
@@ -381,7 +381,7 @@ public class XMLRecipeLoader extends XMLLoader {
     /**
      * Register a recipe.<br>
      * Uses Minecraft API (Forge/Modloader) specific method of registration.
-     * 
+     *
      * @param output
      *            Recipe output.
      * @param input

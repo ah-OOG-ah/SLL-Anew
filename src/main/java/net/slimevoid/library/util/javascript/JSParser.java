@@ -18,7 +18,7 @@ import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 
 import net.slimevoid.library.core.SlimevoidCore;
-import net.slimevoid.library.core.lib.CoreLib;
+import net.slimevoid.library.core.SlimevoidLib;
 
 public class JSParser {
 
@@ -35,7 +35,7 @@ public class JSParser {
             se.eval(script);
             return se.eval(func);
         } catch (ScriptException e) {
-            SlimevoidCore.console(CoreLib.MOD_ID,
+            SlimevoidCore.console(SlimevoidLib.MOD_ID,
                                   e.getLocalizedMessage());
         }
         return null;

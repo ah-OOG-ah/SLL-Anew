@@ -20,14 +20,14 @@ import java.util.jar.JarFile;
 import java.util.zip.ZipEntry;
 
 import net.slimevoid.library.core.SlimevoidCore;
-import net.slimevoid.library.core.lib.CoreLib;
+import net.slimevoid.library.core.SlimevoidLib;
 
 public class FileUtils {
     /**
      * List directory contents for a resource folder. Not recursive. This is
      * basically a brute-force implementation. Works for regular files and also
      * JARs.
-     * 
+     *
      * @author Greg Briggs
      * @editor Eurymachus
      * @param clazz
@@ -40,7 +40,7 @@ public class FileUtils {
      * @throws IOException
      */
     public static String[] getResourceListing(Class clazz, String path) throws URISyntaxException, IOException {
-        SlimevoidCore.console(CoreLib.MOD_ID,
+        SlimevoidCore.console(SlimevoidLib.MOD_ID,
                               "Attempting resource load from [" + path
                                       + "] using Class Parent ["
                                       + clazz.getSimpleName() + "]");
@@ -49,7 +49,7 @@ public class FileUtils {
 
         if (dirURL != null && dirURL.getProtocol().equals("file")) {
             /* A file path: easy enough */
-            SlimevoidCore.console(CoreLib.MOD_ID,
+            SlimevoidCore.console(SlimevoidLib.MOD_ID,
                                   "Found resource in file path!");
             return new File(dirURL.toURI()).list();
         }
@@ -72,12 +72,12 @@ public class FileUtils {
                 String filePath = dirURL.getPath().substring(5,
                                                              dirURL.getPath().indexOf("!"));
                 Enumeration<? extends ZipEntry> entries = null;
-                SlimevoidCore.console(CoreLib.MOD_ID,
+                SlimevoidCore.console(SlimevoidLib.MOD_ID,
                                       "Jar protocol loaded!");
                 JarFile jar = new JarFile(URLDecoder.decode(filePath,
                                                             "UTF-8"));
                 entries = jar.entries();
-                SlimevoidCore.console(CoreLib.MOD_ID,
+                SlimevoidCore.console(SlimevoidLib.MOD_ID,
                                       "JarFile initialized with the following [Path: "
                                               + filePath + ", Name: "
                                               + jar.getName()
@@ -109,7 +109,7 @@ public class FileUtils {
                         }
                     }
                     if (result.size() > 0) {
-                        SlimevoidCore.console(CoreLib.MOD_ID,
+                        SlimevoidCore.console(SlimevoidLib.MOD_ID,
                                               "Resource folder loaded ["
                                                       + path
                                                       + "], Number of resource files ["
@@ -118,7 +118,7 @@ public class FileUtils {
                     }
                 }
             } else {
-                SlimevoidCore.console(CoreLib.MOD_ID,
+                SlimevoidCore.console(SlimevoidLib.MOD_ID,
                                       "Caution: Failed to read URL ["
                                               + dirURL.getPath()
                                               + "], unknown protocol ["
@@ -128,14 +128,14 @@ public class FileUtils {
 
             }
         } else {
-            SlimevoidCore.console(CoreLib.MOD_ID,
+            SlimevoidCore.console(SlimevoidLib.MOD_ID,
                                   "Caution: Resource folder entries [" + path
                                           + "] could not be located!",
                                   1);
         }
         UnsupportedOperationException uOE = new UnsupportedOperationException("Cannot list files for URL "
                                                                               + dirURL);
-        SlimevoidCore.console(CoreLib.MOD_ID,
+        SlimevoidCore.console(SlimevoidLib.MOD_ID,
                               uOE.getLocalizedMessage(),
                               1);
         throw uOE;

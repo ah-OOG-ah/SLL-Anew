@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import net.slimevoid.library.core.SlimevoidCore;
-import net.slimevoid.library.core.lib.CoreLib;
+import net.slimevoid.library.core.SlimevoidLib;
 
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -53,7 +53,7 @@ public abstract class XMLLoader {
     /**
      * Add a XML variable mapping. Variable name can be used in XML files
      * instead of IDs.
-     * 
+     *
      * @param var
      *            Variable name.
      * @param val
@@ -74,12 +74,12 @@ public abstract class XMLLoader {
                                         val);
 
         if (flag != null) {
-            SlimevoidCore.console(CoreLib.MOD_ID,
+            SlimevoidCore.console(SlimevoidLib.MOD_ID,
                                   "XML Variable replaced ID [" + flag
                                           + "] with ID [" + val
                                           + "] and mapped to " + var);
         } else {
-            SlimevoidCore.console(CoreLib.MOD_ID,
+            SlimevoidCore.console(SlimevoidLib.MOD_ID,
                                   "XML Variable loaded for [" + var + "] @ID ["
                                           + val + "]");
         }
@@ -87,7 +87,7 @@ public abstract class XMLLoader {
 
     /**
      * Fetches a value with set tag from a element node.
-     * 
+     *
      * @param tag
      *            Tag name.
      * @param element
